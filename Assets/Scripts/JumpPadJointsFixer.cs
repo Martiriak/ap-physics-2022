@@ -5,6 +5,7 @@ using APPhysics.Utility;
 
 namespace APPhysics.JumpPad
 {
+    [RequireComponent(typeof(JumpPadGridBuilder))]
     public class JumpPadJointsFixer : MonoBehaviour
     {
         [SerializeField] private Vector2Int m_GridDim = new Vector2Int(3, 3);
@@ -13,6 +14,8 @@ namespace APPhysics.JumpPad
         [SerializeField] private bool m_DisableJointsSetup = false;
 
         private Rigidbody[] m_JumpPadPoints = null;
+
+        private JumpPadGridBuilder c_GridBuilder = null;
 
         private void Awake()
         {
@@ -23,6 +26,7 @@ namespace APPhysics.JumpPad
         {
             Assert.IsNotNull(m_JointToAdd);
             Assert.AreEqual(m_GridDim.x * m_GridDim.y, transform.childCount);
+            if (c_GridBuilder == null) c_GridBuilder = GetComponent<JumpPadGridBuilder>();
 
             if (m_JumpPadPoints == null || m_JumpPadPoints.Length == 0)
             {
