@@ -1,15 +1,16 @@
 using UnityEngine;
 using UnityEditor;
-using APPhysics.JumpPad;
+using APPhysics.MeshBuilder;
+
 
 namespace APPhysics.Editors
 {
-    [CustomEditor(typeof(JumpPadBuilder))]
-    public class JumpPadBuilder_Editor : Editor
+    [CustomEditor(typeof(GridMeshBuilder))]
+    public class GridMeshBuilder_Editor : Editor
     {
         public override void OnInspectorGUI()
         {
-            JumpPadBuilder Builder = target as JumpPadBuilder;
+            GridMeshBuilder Builder = target as GridMeshBuilder;
             DrawDefaultInspector();
 
             if (GUILayout.Button("Generate Mesh")) Builder.GenerateMesh();

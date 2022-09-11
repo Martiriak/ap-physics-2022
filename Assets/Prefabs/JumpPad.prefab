@@ -9,9 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 311238609963548144}
-  - component: {fileID: 348046659443547649}
   - component: {fileID: 3764055991325494551}
   - component: {fileID: 8277647134321977597}
+  - component: {fileID: 348046659443547649}
+  - component: {fileID: 2938152391317296175}
   m_Layer: 0
   m_Name: JumpPad
   m_TagString: Untagged
@@ -43,20 +44,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &348046659443547649
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7596424528309221867}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 679dcf358a5fa624d98b94661bb98d89, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  GridXDim: 3
-  GridYDim: 3
 --- !u!33 &3764055991325494551
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -107,6 +94,34 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &348046659443547649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7596424528309221867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 679dcf358a5fa624d98b94661bb98d89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_GridDim: {x: 3, y: 3}
+--- !u!114 &2938152391317296175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7596424528309221867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27b51302d025ee44798182c292180480, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_GridDim: {x: 3, y: 3}
+  m_JointToAdd: {fileID: 4933212241392430147, guid: e346693193362dc4c9211fd311243c55, type: 3}
+  m_DisableJointsSetup: 0
 --- !u!1001 &6441806743091113090
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -116,7 +131,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3197303238628277930, guid: 731dc18f3e6068d4889d1da049a7328e, type: 3}
       propertyPath: m_Name
-      value: JumpPad Point
+      value: ConfiguredJoint
       objectReference: {fileID: 0}
     - target: {fileID: 8484727968552673208, guid: 731dc18f3e6068d4889d1da049a7328e, type: 3}
       propertyPath: m_RootOrder
@@ -169,107 +184,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8484727968552673208, guid: 731dc18f3e6068d4889d1da049a7328e, type: 3}
   m_PrefabInstance: {fileID: 6441806743091113090}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &8447344706933592616 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3197303238628277930, guid: 731dc18f3e6068d4889d1da049a7328e, type: 3}
-  m_PrefabInstance: {fileID: 6441806743091113090}
-  m_PrefabAsset: {fileID: 0}
---- !u!153 &6176680047213827518
-ConfigurableJoint:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8447344706933592616}
-  m_ConnectedBody: {fileID: 4975129644599834558}
-  m_ConnectedArticulationBody: {fileID: 0}
-  m_Anchor: {x: 0, y: 0, z: 0}
-  m_Axis: {x: 1, y: 0, z: 0}
-  m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0, y: 0, z: 0}
-  serializedVersion: 2
-  m_SecondaryAxis: {x: 0, y: 1, z: 0}
-  m_XMotion: 2
-  m_YMotion: 1
-  m_ZMotion: 2
-  m_AngularXMotion: 1
-  m_AngularYMotion: 2
-  m_AngularZMotion: 1
-  m_LinearLimitSpring:
-    spring: 0
-    damper: 0
-  m_LinearLimit:
-    limit: 0.5
-    bounciness: 0
-    contactDistance: 0
-  m_AngularXLimitSpring:
-    spring: 0
-    damper: 0
-  m_LowAngularXLimit:
-    limit: 0
-    bounciness: 0
-    contactDistance: 0
-  m_HighAngularXLimit:
-    limit: 0
-    bounciness: 0
-    contactDistance: 0
-  m_AngularYZLimitSpring:
-    spring: 0
-    damper: 0
-  m_AngularYLimit:
-    limit: 0
-    bounciness: 0
-    contactDistance: 0
-  m_AngularZLimit:
-    limit: 0
-    bounciness: 0
-    contactDistance: 0
-  m_TargetPosition: {x: 0, y: 0, z: 0}
-  m_TargetVelocity: {x: 0, y: 0, z: 0}
-  m_XDrive:
-    serializedVersion: 3
-    positionSpring: 0
-    positionDamper: 0
-    maximumForce: 3.4028233e+38
-  m_YDrive:
-    serializedVersion: 3
-    positionSpring: 0
-    positionDamper: 0
-    maximumForce: 3.4028233e+38
-  m_ZDrive:
-    serializedVersion: 3
-    positionSpring: 0
-    positionDamper: 0
-    maximumForce: 3.4028233e+38
-  m_TargetRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_TargetAngularVelocity: {x: 0, y: 0, z: 0}
-  m_RotationDriveMode: 0
-  m_AngularXDrive:
-    serializedVersion: 3
-    positionSpring: 0
-    positionDamper: 0
-    maximumForce: 3.4028233e+38
-  m_AngularYZDrive:
-    serializedVersion: 3
-    positionSpring: 0
-    positionDamper: 0
-    maximumForce: 3.4028233e+38
-  m_SlerpDrive:
-    serializedVersion: 3
-    positionSpring: 0
-    positionDamper: 0
-    maximumForce: 3.4028233e+38
-  m_ProjectionMode: 0
-  m_ProjectionDistance: 0.1
-  m_ProjectionAngle: 180
-  m_ConfiguredInWorldSpace: 0
-  m_SwapBodies: 0
-  m_BreakForce: Infinity
-  m_BreakTorque: Infinity
-  m_EnableCollision: 0
-  m_EnablePreprocessing: 0
-  m_MassScale: 1
-  m_ConnectedMassScale: 1
 --- !u!1001 &8768946522504608448
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -279,7 +193,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3197303238628277930, guid: 731dc18f3e6068d4889d1da049a7328e, type: 3}
       propertyPath: m_Name
-      value: JumpPad Point (4)
+      value: ConfiguredJoint
       objectReference: {fileID: 0}
     - target: {fileID: 8484727968552673208, guid: 731dc18f3e6068d4889d1da049a7328e, type: 3}
       propertyPath: m_RootOrder
@@ -341,7 +255,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3197303238628277930, guid: 731dc18f3e6068d4889d1da049a7328e, type: 3}
       propertyPath: m_Name
-      value: JumpPad Point (7)
+      value: ConfiguredJoint
       objectReference: {fileID: 0}
     - target: {fileID: 8484727968552673208, guid: 731dc18f3e6068d4889d1da049a7328e, type: 3}
       propertyPath: m_RootOrder
@@ -403,7 +317,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3197303238628277930, guid: 731dc18f3e6068d4889d1da049a7328e, type: 3}
       propertyPath: m_Name
-      value: JumpPad Point (1)
+      value: ConfiguredJoint
       objectReference: {fileID: 0}
     - target: {fileID: 8484727968552673208, guid: 731dc18f3e6068d4889d1da049a7328e, type: 3}
       propertyPath: m_RootOrder
@@ -456,11 +370,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8484727968552673208, guid: 731dc18f3e6068d4889d1da049a7328e, type: 3}
   m_PrefabInstance: {fileID: 8768946523452606073}
   m_PrefabAsset: {fileID: 0}
---- !u!54 &4975129644599834558 stripped
-Rigidbody:
-  m_CorrespondingSourceObject: {fileID: 4376012754711572935, guid: 731dc18f3e6068d4889d1da049a7328e, type: 3}
-  m_PrefabInstance: {fileID: 8768946523452606073}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8768946523555090921
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -470,7 +379,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3197303238628277930, guid: 731dc18f3e6068d4889d1da049a7328e, type: 3}
       propertyPath: m_Name
-      value: JumpPad Point (2)
+      value: ConfiguredJoint
       objectReference: {fileID: 0}
     - target: {fileID: 8484727968552673208, guid: 731dc18f3e6068d4889d1da049a7328e, type: 3}
       propertyPath: m_RootOrder
@@ -532,7 +441,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3197303238628277930, guid: 731dc18f3e6068d4889d1da049a7328e, type: 3}
       propertyPath: m_Name
-      value: JumpPad Point (6)
+      value: ConfiguredJoint
       objectReference: {fileID: 0}
     - target: {fileID: 8484727968552673208, guid: 731dc18f3e6068d4889d1da049a7328e, type: 3}
       propertyPath: m_RootOrder
@@ -594,7 +503,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3197303238628277930, guid: 731dc18f3e6068d4889d1da049a7328e, type: 3}
       propertyPath: m_Name
-      value: JumpPad Point (8)
+      value: ConfiguredJoint
       objectReference: {fileID: 0}
     - target: {fileID: 8484727968552673208, guid: 731dc18f3e6068d4889d1da049a7328e, type: 3}
       propertyPath: m_RootOrder
@@ -656,7 +565,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3197303238628277930, guid: 731dc18f3e6068d4889d1da049a7328e, type: 3}
       propertyPath: m_Name
-      value: JumpPad Point (5)
+      value: ConfiguredJoint
       objectReference: {fileID: 0}
     - target: {fileID: 8484727968552673208, guid: 731dc18f3e6068d4889d1da049a7328e, type: 3}
       propertyPath: m_RootOrder
@@ -718,7 +627,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3197303238628277930, guid: 731dc18f3e6068d4889d1da049a7328e, type: 3}
       propertyPath: m_Name
-      value: JumpPad Point (3)
+      value: ConfiguredJoint
       objectReference: {fileID: 0}
     - target: {fileID: 8484727968552673208, guid: 731dc18f3e6068d4889d1da049a7328e, type: 3}
       propertyPath: m_RootOrder
