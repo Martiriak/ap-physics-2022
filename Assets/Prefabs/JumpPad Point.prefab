@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8484727968552673208}
   - component: {fileID: 4376012754711572935}
-  - component: {fileID: 4988668002042766864}
   - component: {fileID: 1270196799518315556}
   m_Layer: 0
   m_Name: JumpPad Point
@@ -50,30 +49,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 122
   m_CollisionDetection: 1
---- !u!145 &4988668002042766864
-SpringJoint:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3197303238628277930}
-  m_ConnectedBody: {fileID: 0}
-  m_ConnectedArticulationBody: {fileID: 0}
-  m_Anchor: {x: 0, y: 0, z: 0}
-  m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0, y: 0, z: 0}
-  serializedVersion: 2
-  m_Spring: 30
-  m_Damper: 2
-  m_MinDistance: 0
-  m_MaxDistance: 0
-  m_Tolerance: 0.025
-  m_BreakForce: Infinity
-  m_BreakTorque: Infinity
-  m_EnableCollision: 0
-  m_EnablePreprocessing: 1
-  m_MassScale: 1
-  m_ConnectedMassScale: 1
 --- !u!65 &1270196799518315556
 BoxCollider:
   m_ObjectHideFlags: 0
