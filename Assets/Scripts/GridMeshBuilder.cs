@@ -39,13 +39,14 @@ namespace APPhysics.MeshBuilder
                     );
             }
 
+            // Upper side
             {
                 int iQuad = 0;
 
                 for (int y = 0; y < m_GridDim.y - 1; ++y)
                     for (int x = 0; x < m_GridDim.x - 1; ++x)
                     {
-                        Triangles[iQuad]     = FromXYToIndex(x    , y);
+                        Triangles[iQuad]     = FromXYToIndex(x    , y    );
                         Triangles[iQuad + 1] = FromXYToIndex(x    , y + 1);
                         Triangles[iQuad + 2] = FromXYToIndex(x + 1, y    );
                         Triangles[iQuad + 3] = FromXYToIndex(x + 1, y    );
@@ -55,6 +56,24 @@ namespace APPhysics.MeshBuilder
                         iQuad += 6;
                     }
             }
+
+            /* Downer side
+            {
+                int iQuad = (m_GridDim.x - 1) * (m_GridDim.y - 1) * 6;
+
+                for (int y = m_GridDim.y - 1; y > 1; --y)
+                    for (int x = m_GridDim.x - 1; x > 1; --x)
+                    {
+                        Triangles[iQuad]     = FromXYToIndex(x    , y    );
+                        Triangles[iQuad + 1] = FromXYToIndex(x - 1, y    );
+                        Triangles[iQuad + 2] = FromXYToIndex(x    , y - 1);
+                        Triangles[iQuad + 3] = FromXYToIndex(x    , y - 1);
+                        Triangles[iQuad + 4] = FromXYToIndex(x - 1, y    );
+                        Triangles[iQuad + 5] = FromXYToIndex(x - 1, y - 1);
+
+                        iQuad += 6;
+                    }
+            }*/
 
             mesh.MarkDynamic();
 

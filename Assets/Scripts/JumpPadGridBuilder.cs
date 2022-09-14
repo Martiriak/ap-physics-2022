@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Assertions;
 
 
 namespace APPhysics.JumpPad
@@ -17,6 +18,17 @@ namespace APPhysics.JumpPad
 
         public GameObject JumpPadPointPrefab => m_JumpPadPointPrefab;
         public GameObject BorderJumpPadPointPrefab => m_BorderJumpPadPointPrefab;
+
+
+        public Rigidbody GetPointAt(int x, int y)
+        {
+            Assert.IsFalse(transform.childCount == 0);
+            if (x < 0 || y < 0 || x >= DimX || y >= DimY) return null;
+
+            return transform.GetChild(FromXYToIndex(x, y)).GetComponent<Rigidbody>();
+        }
+
+        private int FromXYToIndex(int x, int y) => (DimX * y) + x;
 
         private void OnValidate()
         {

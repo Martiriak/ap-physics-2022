@@ -21,6 +21,9 @@ namespace APPhysics.JumpPad
         private float c_SpringCoefficient;
 
 
+        public Vector3 RestingPosition => c_RestingPosition;
+
+
         private void Awake()
         {
             Assert.IsNotNull(m_SpringCoefficientHolder);

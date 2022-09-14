@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 348046659443547649}
   - component: {fileID: 2938152391317296175}
   - component: {fileID: 473975807889405852}
-  - component: {fileID: 8722977399151859180}
+  - component: {fileID: 4966724926987735248}
   m_Layer: 0
   m_Name: JumpPad
   m_TagString: Untagged
@@ -572,7 +572,7 @@ MonoBehaviour:
   m_DistanceBetweenPoints: 0.5
   m_JumpPadPointPrefab: {fileID: 3197303238628277930, guid: 731dc18f3e6068d4889d1da049a7328e, type: 3}
   m_BorderJumpPadPointPrefab: {fileID: 7165123952976103491, guid: 08dbf88b4720f1448b52037fe22eccd8, type: 3}
---- !u!114 &8722977399151859180
+--- !u!114 &4966724926987735248
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -581,9 +581,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 7596424528309221867}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5fedc965cc96bb44a86a687b9e08cdf, type: 3}
+  m_Script: {fileID: 11500000, guid: 2dc151e05066b564f9444c95751cbdfc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_MaxPullForce: 60
+  m_FullChargeTime: 2
 --- !u!1001 &16490618875501551
 PrefabInstance:
   m_ObjectHideFlags: 0
