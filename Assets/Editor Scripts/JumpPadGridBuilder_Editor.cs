@@ -37,7 +37,8 @@ namespace APPhysics.Editors
                     NewPoint.transform.SetParent(Builder.transform);
                     NewPoint.transform.position = Builder.transform.position;
 
-                    NewPoint.transform.localPosition = new Vector3(0f + x, 0f, 0f + y);
+                    NewPoint.transform.localPosition
+                        = new Vector3(0f + (x * Builder.DistanceBetweenPoints), 0f, 0f + (y * Builder.DistanceBetweenPoints));
                 }
         }
 

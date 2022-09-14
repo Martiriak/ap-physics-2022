@@ -24,6 +24,7 @@ namespace APPhysics.MeshBuilder
             if (m_Points == null || m_Points.Length == 0) PopulatePointsArray();
 
             Mesh mesh = new Mesh();
+            Vector2[] UVs = new Vector2[m_Points.Length];
 
             Vector3[] Vertices = new Vector3[m_Points.Length];
             int[] Triangles = new int[(m_GridDim.x - 1) * (m_GridDim.y - 1) * 6];
@@ -31,6 +32,11 @@ namespace APPhysics.MeshBuilder
             for (int i = 0; i < m_Points.Length; ++i)
             {
                 Vertices[i] = m_Points[i].localPosition;
+                UVs[i] = new Vector2
+                    (
+                        FromIndexToX(i) / m_GridDim.x - 1f,
+                        FromIndexToY(i) / m_GridDim.y - 1f
+                    );
             }
 
             {
@@ -50,10 +56,15 @@ namespace APPhysics.MeshBuilder
                     }
             }
 
+            mesh.MarkDynamic();
+
             mesh.vertices = Vertices;
             mesh.triangles = Triangles;
+            mesh.SetUVs(0, UVs);
 
             mesh.RecalculateNormals();
+            mesh.RecalculateUVDistributionMetrics();
+            mesh.RecalculateTangents();
 
             c_ThisMeshFilter.mesh = mesh;
         }
@@ -75,7 +86,11 @@ namespace APPhysics.MeshBuilder
                 Vertices[i] = m_Points[i].localPosition;
             }
 
+            mesh.MarkDynamic();
+
             mesh.vertices = Vertices;
+
+            mesh.RecalculateTangents();
         }
 
         private void PopulatePointsArray()
@@ -90,6 +105,8 @@ namespace APPhysics.MeshBuilder
 
 
         private int FromXYToIndex(int x, int y) => (m_GridDim.x * y) + x;
+        private int FromIndexToY(int i) => i / m_GridDim.x;
+        private int FromIndexToX(int i) => i % m_GridDim.x;
 
         private void OnValidate()
         {

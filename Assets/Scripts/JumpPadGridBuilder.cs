@@ -6,12 +6,14 @@ namespace APPhysics.JumpPad
     public class JumpPadGridBuilder : MonoBehaviour
     {
         [SerializeField] private Vector2Int m_GridDimensions = new Vector2Int(4, 4);
+        [SerializeField] private float m_DistanceBetweenPoints = 0.5f;
         [Space]
         [SerializeField] private GameObject m_JumpPadPointPrefab = null;
         [SerializeField] private GameObject m_BorderJumpPadPointPrefab = null;
 
         public int DimX => m_GridDimensions.x;
         public int DimY => m_GridDimensions.y;
+        public float DistanceBetweenPoints => m_DistanceBetweenPoints;
 
         public GameObject JumpPadPointPrefab => m_JumpPadPointPrefab;
         public GameObject BorderJumpPadPointPrefab => m_BorderJumpPadPointPrefab;
